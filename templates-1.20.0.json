@@ -773,6 +773,45 @@
   },
   {
     "type": 2,
+    "title": "Strapi + Mongo",
+    "description": "The open source Headless CMS Front-End Developers love.",
+    "note": "Deploys a Strapi instance connected to a MongoDB database.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://cdn.xyz.dev/Assets/xyz/Logo_strapi_blue@2x_square.png",
+    "repository": {
+      "url": "https://github.com/xyzrepo/templates",
+      "stackfile": "stacks/strapi/mongo-stack.yml"
+    }
+  },
+  {
+    "type": 2,
+    "title": "Strapi + Postgres",
+    "description": "The open source Headless CMS Front-End Developers love.",
+    "note": "Deploys a Strapi instance connected to a Postgres database.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://cdn.xyz.dev/Assets/xyz/Logo_strapi_blue@2x_square.png",
+    "repository": {
+      "url": "https://github.com/xyzrepo/templates",
+      "stackfile": "stacks/strapi/postgres-stack.yml"
+    }
+  },
+  {
+    "type": 2,
+    "title": "Strapi + MySQL",
+    "description": "The open source Headless CMS Front-End Developers love.",
+    "note": "Deploys a Strapi instance connected to a MySQL database.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://cdn.xyz.dev/Assets/xyz/Logo_strapi_blue@2x_square.png",
+    "repository": {
+      "url": "https://github.com/xyzrepo/templates",
+      "stackfile": "stacks/strapi/mysql-stack.yml"
+    }
+  },
+  {
+    "type": 2,
     "title": "Wordpress",
     "description": "Wordpress setup with a MySQL database",
     "note": "Deploys a Wordpress instance connected to a MySQL database.",
