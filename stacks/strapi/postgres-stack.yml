@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
@@ -31,5 +31,5 @@ services:
     command: 'strapi start'
 
 volumes:
-  db_data:
+  db_data: 
   app:
