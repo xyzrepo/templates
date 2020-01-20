@@ -31,5 +31,5 @@ services:
     command: 'strapi start'
 
 volumes:
-  db_data: ./db_data/mongo
-  app: ./data/strapi
+  db_data:
+  app:
