@@ -39,6 +39,21 @@
   },
   {
     "type": 1,
+    "title": "Nginx Manager",
+    "description": "nginx manager",
+    "categories": ["webserver"],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
+    "image": "jc21/nginx-proxy-manager:latest",
+    "ports": ["80/tcp", "81/tcp", "443/tcp"],
+    "volumes": [
+      { "container": "/app/config/production.json", "bind": "./config.json" },
+      { "container": "/data", "bind": "./data" },
+      { "container": "/etc/letsencrypt", "bind": "./letsencrypt" }
+    ]
+  },
+  {
+    "type": 1,
     "title": "Httpd",
     "description": "Open-source HTTP server",
     "categories": ["webserver"],
