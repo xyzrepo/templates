@@ -16,6 +16,12 @@ services:
     environment:
       # if you want pretty colors in your docker logs:
       - FORCE_COLOR=1
+      - database.engine: "mysql"
+      - database.host: db
+      - database.name: "npm"
+      - database.user: "npm"
+      - database.password: "npm"
+      - database.port: 3306
   db:
     image: mariadb:latest
     restart: always
@@ -26,3 +32,6 @@ services:
       MYSQL_PASSWORD: 'npm'
     volumes:
       - ./data/mysql:/var/lib/mysql
+volumes:
+  db_data:
+  app:

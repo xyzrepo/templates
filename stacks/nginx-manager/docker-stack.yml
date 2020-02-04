@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   app:
     image: jc21/nginx-proxy-manager:latest
@@ -15,14 +15,23 @@ services:
       - db
     environment:
       # if you want pretty colors in your docker logs:
-      - FORCE_COLOR=1
+      - FORCE_COLOR: 1
+      - database.engine: "mysql"
+      - database.host: db
+      - database.name: "npm"
+      - database.user: "npm"
+      - database.password: "npm"
+      - database.port: 3306
   db:
     image: mariadb:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
-      MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
+      MYSQL_ROOT_PASSWORD: "npm"
+      MYSQL_DATABASE: "npm"
+      MYSQL_USER: "npm"
+      MYSQL_PASSWORD: "npm"
     volumes:
       - ./data/mysql:/var/lib/mysql
+volumes:
+  db_data:
+  app:
