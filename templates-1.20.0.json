@@ -24,7 +24,7 @@
     }
   },
   {
-    "type": 3,
+    "type": 2,
     "title": "Nginx Manager",
     "description": "The open source Headless CMS Front-End Developers love.",
     "note": "Deploys a Strapi instance connected to a MongoDB database.",
@@ -52,7 +52,7 @@
   },
   {
     "type": 1,
-    "title": "Nginx Manager",
+    "title": "Nginx Manager EXPERIMENTAL",
     "description": "nginx manager",
     "categories": ["webserver"],
     "platform": "linux",
