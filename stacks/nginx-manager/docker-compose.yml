@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   app:
     image: jc21/nginx-proxy-manager:latest
@@ -20,10 +20,12 @@ services:
   db:
     image: mariadb:latest
     restart: always
+    ports:
+      - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
-      MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
+      MYSQL_ROOT_PASSWORD: "npm"
+      MYSQL_DATABASE: "npm"
+      MYSQL_USER: "npm"
+      MYSQL_PASSWORD: "npm"
     volumes:
       - /nginx-manager/data/mysql:/var/lib/mysql
