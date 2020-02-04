@@ -47,9 +47,9 @@
     "image": "jc21/nginx-proxy-manager:latest",
     "ports": ["80/tcp", "81/tcp", "443/tcp"],
     "volumes": [
-      { "container": "/app/config/production.json", "bind": "./config.json" },
-      { "container": "/data", "bind": "./data" },
-      { "container": "/etc/letsencrypt", "bind": "./letsencrypt" }
+      { "container": "/app/config/production.json", "bind": "/config.json" },
+      { "container": "/data", "bind": "/data" },
+      { "container": "/etc/letsencrypt", "bind": "/letsencrypt" }
     ]
   },
   {
