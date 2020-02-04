@@ -1,42 +1,28 @@
 version: '2'
-
 services:
-  db:
-    image: mysql
-    volumes:
-      - ./db:/var/lib/mysql
-      - ./config/my.cnf:/etc/mysql/conf.d/npm.cnf
-      - ./data/mysql:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_DATABASE: nginx-manager
-      MYSQL_USER: nginx-manager
-      MYSQL_PASSWORD: nginx-manager
-      MYSQL_ROOT_PASSWORD: nginx-manager
-    command: --default-authentication-plugin=mysql_native_password
-
   app:
-    image: jc21/nginx-proxy-manager-base:latest
+    image: jc21/nginx-proxy-manager:latest
+    restart: always
     ports:
       - 80:80
       - 81:81
       - 443:443
-    restart: always
-    environment:
-      DATABASE_CLIENT: mysql
-      DATABASE_HOST: db
-      DATABASE_PORT: 3306
-      DATABASE_NAME: nginx-manager
-      DATABASE_USERNAME: nginx-manager
-      DATABASE_PASSWORD: nginx-manager
     volumes:
+      - ./config.json:/app/config/production.json
       - ./data:/data
-      - ./data/letsencrypt:/etc/letsencrypt
-      - .:/app
-      - ./rootfs/etc/nginx:/etc/nginx
-    working_dir: /app
+      - ./letsencrypt:/etc/letsencrypt
     depends_on:
       - db
-    links:
-      - db
-    command: node --max_old_space_size=250 --abort_on_uncaught_exception node_modules/nodemon/bin/nodemon.js
+    environment:
+      # if you want pretty colors in your docker logs:
+      - FORCE_COLOR=1
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'npm'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
