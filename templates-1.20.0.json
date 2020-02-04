@@ -20,6 +20,19 @@
     "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
     "repository": {
       "url": "https://github.com/xyzrepo/templates",
+      "stackfile": "stacks/nginx-manager/docker-compose.yml"
+    }
+  },
+  {
+    "type": 3,
+    "title": "Nginx Manager",
+    "description": "The open source Headless CMS Front-End Developers love.",
+    "note": "Deploys a Strapi instance connected to a MongoDB database.",
+    "categories": ["webserver"],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
+    "repository": {
+      "url": "https://github.com/xyzrepo/templates",
       "stackfile": "stacks/nginx-manager/docker-stack.yml"
     }
   },
